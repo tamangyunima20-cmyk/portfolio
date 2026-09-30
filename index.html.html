@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yunima Tamang | C and C++ developer in training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sky1:#9fd3ea;--sky2:#f9f1d2;--paper:#fffaf0;--card:#ffffff;--ink:#23403a;--soft:#5b7169;--leaf:#4f9a63;--forest:#2f6a55;--sun:#f2b84b;--line:#d9e6d3;--hill1:#79b877;--hill2:#4f9a63;--cloud:#ffffff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky1:#1f2f5c;--sky2:#e59b6b;--paper:#15211f;--card:#1d2d2a;--ink:#eef3e6;--soft:#a8bbb1;--leaf:#8fd19a;--forest:#a9e0b0;--sun:#f6c765;--line:#2f443f;--hill1:#2f6a55;--hill2:#1f4a3d;--cloud:#f3d7c6}}
+:root[data-theme="dark"]{--sky1:#1f2f5c;--sky2:#e59b6b;--paper:#15211f;--card:#1d2d2a;--ink:#eef3e6;--soft:#a8bbb1;--leaf:#8fd19a;--forest:#a9e0b0;--sun:#f6c765;--line:#2f443f;--hill1:#2f6a55;--hill2:#1f4a3d;--cloud:#f3d7c6}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.05rem/1.7 "Zen Maru Gothic",system-ui,sans-serif}
+h1,h2,h3{font-family:"Klee One","Zen Maru Gothic",cursive,serif;line-height:1.2;margin:0}
+a{color:var(--forest)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:64rem;margin:0 auto;padding:0 1.25rem}
+.hero{position:relative;overflow:hidden;background:linear-gradient(var(--sky1),var(--sky2));padding-bottom:9rem}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:1.25rem;flex-wrap:wrap;position:relative;z-index:2}
+.nav b{font-family:"Klee One",cursive;font-size:1.2rem;color:#23403a}
+.nav div{display:flex;gap:1.25rem;flex-wrap:wrap}
+.nav a{color:#23403a;text-decoration:none;font-weight:500}
+.nav a:hover{text-decoration:underline}
+.sun{position:absolute;right:12%;top:18%;width:7rem;height:7rem;border-radius:50%;background:var(--sun);box-shadow:0 0 0 1.2rem #f2b84b33,0 0 0 2.6rem #f2b84b1f}
+.cloud{position:absolute;height:3.2rem;width:11rem;background:var(--cloud);border-radius:3rem;opacity:.92;animation:drift 70s linear infinite}
+.cloud::before,.cloud::after{content:"";position:absolute;background:var(--cloud);border-radius:50%}
+.cloud::before{width:4.6rem;height:4.6rem;left:1.6rem;top:-2.2rem}
+.cloud::after{width:3.6rem;height:3.6rem;left:5.6rem;top:-1.6rem}
+.c1{top:26%;left:-14rem}.c2{top:52%;left:-14rem;animation-duration:95s;animation-delay:-40s;transform:scale(.7)}.c3{top:12%;left:-14rem;animation-duration:120s;animation-delay:-80s;transform:scale(.5)}
+@keyframes drift{to{translate:calc(100vw + 30rem) 0}}
+.hero-text{position:relative;z-index:2;padding-top:5rem;max-width:40rem;color:#23403a}
+.hero h1{font-size:clamp(2.8rem,8vw,5.2rem);font-weight:600}
+.hero p{font-size:1.25rem;margin:1.2rem 0 1.8rem}
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:2rem;font-weight:700;text-decoration:none;margin:0 .6rem .6rem 0}
+.btn.main{background:var(--forest);color:#fff}
+.btn.alt{background:#ffffffcc;color:#23403a}
+.btn:hover{transform:translateY(-2px)}
+.hills{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:9rem;display:block}
+section{padding:4rem 0 1rem}
+h2{font-size:2rem;margin-bottom:1rem}
+.lead{max-width:40rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.25rem;margin-top:1.5rem}
+.card{background:var(--card);border:2px solid var(--line);padding:1.4rem}
+.card:nth-child(odd){border-radius:1.6rem 2.4rem 1.6rem 2.4rem}
+.card:nth-child(even){border-radius:2.4rem 1.6rem 2.4rem 1.6rem}
+.card h3{font-size:1.35rem;margin-bottom:.4rem}
+.card p{margin:0;color:var(--soft)}
+.project{background:var(--card);border:2px solid var(--line);border-radius:2rem;padding:1.6rem;margin-top:1rem}
+.project ul{padding-left:1.2rem;max-width:42rem}
+.demo{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem;margin-top:1.5rem;background:var(--paper);border-radius:1.5rem;padding:1.25rem}
+.demo h3{font-size:1.15rem;margin-bottom:.6rem}
+.tables{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.tables button{font:inherit;font-weight:700;padding:.8rem 0;border-radius:1rem;border:2px solid var(--leaf);background:var(--card);color:var(--ink);cursor:pointer}
+.tables button[aria-pressed="true"]{background:var(--leaf);color:#fff}
+.tables button.taken{border-color:var(--line);color:var(--soft);text-decoration:line-through}
+.item{display:flex;justify-content:space-between;align-items:center;gap:.5rem;padding:.35rem 0;border-bottom:1px dashed var(--line)}
+.item span:first-child{flex:1}
+.item button{width:2rem;height:2rem;border-radius:50%;border:2px solid var(--leaf);background:var(--card);color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
+.item output{min-width:1.2rem;text-align:center}
+.total{display:flex;justify-content:space-between;font-weight:700;margin:.8rem 0}
+.go{font:inherit;font-weight:700;border:0;border-radius:2rem;padding:.7rem 1.4rem;background:var(--forest);color:#fff;cursor:pointer;width:100%}
+.msg{min-height:3.2rem;margin:.8rem 0 0;color:var(--soft);white-space:pre-line}
+.note{font-size:.9rem;color:var(--soft);margin-top:1rem}
+.edu{border-left:5px solid var(--leaf);padding-left:1.2rem;max-width:40rem}
+.edu h3{font-size:1.3rem}
+.contact p{margin:.3rem 0}
+footer{margin-top:4rem;background:var(--forest);color:#fff;padding:2rem 0 2.5rem;text-align:center}
+footer button{font:inherit;background:transparent;color:#fff;border:2px solid #ffffff99;border-radius:2rem;padding:.4rem 1.1rem;cursor:pointer;margin-top:.8rem}
+@media(prefers-reduced-motion:reduce){.cloud{animation:none;left:10%}.c2{left:55%}.c3{left:70%}html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="sun"></div>
+  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+  <div class="wrap">
+    <nav class="nav"><b>Yunima Tamang</b><div><a href="#about">About</a><a href="#skills">Skills</a><a href="#project">Project</a><a href="#contact">Contact</a></div></nav>
+    <div class="hero-text">
+      <h1>Hi, I am Yunima Tamang.</h1>
+      <p>I study Information Technology in Kathmandu. I write C and C++, and I like building small programs that do exactly what they say they will.</p>
+      <a class="btn main" href="#project">Try my project</a><a class="btn alt" href="#contact">Get in touch</a>
+    </div>
+  </div>
+  <svg class="hills" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--hill1)" d="M0 90C150 30 300 40 450 80S750 130 900 70s220-30 300 0V160H0Z"/><path fill="var(--hill2)" d="M0 130C200 80 350 100 550 125S900 150 1200 100V160H0Z"/></svg>
+</header>
+
+<main class="wrap">
+  <section id="about">
+    <h2>About me</h2>
+    <p class="lead">I am a second semester Bachelor of Information Technology student at Kathmandu Don Bosco College, affiliated with Purbanchal University. I started with C, and I am now learning C++.</p>
+    <p class="lead">I am looking for hands on projects and an internship where I can build real things and learn from people who build them every day.</p>
+    <div class="grid">
+      <div class="card"><h3>I keep learning</h3><p>New language, new problem, I start by reading and trying.</p></div>
+      <div class="card"><h3>I break problems down</h3><p>I look for the smallest piece I can solve first.</p></div>
+      <div class="card"><h3>I explain things clearly</h3><p>I am comfortable talking through my code and my choices.</p></div>
+      <div class="card"><h3>I can lead</h3><p>I am happy to take the lead in a group and share the work fairly.</p></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>What I work with</h2>
+    <div class="grid">
+      <div class="card"><h3>C</h3><p>My strongest base. I learned how programs, memory and control flow fit together here.</p></div>
+      <div class="card"><h3>C++</h3><p>What I am learning now. My restaurant project is written in it.</p></div>
+    </div>
+  </section>
+
+  <section id="project">
+    <h2>Restaurant Order System</h2>
+    <div class="project">
+      <p class="lead">A console program in C++ that handles table bookings and customer orders for a restaurant.</p>
+      <ul>
+        <li>Checks whether a table is already booked before accepting a new booking.</li>
+        <li>Shows a menu with several dishes and their prices.</li>
+        <li>Lets the customer pick items and quantities.</li>
+        <li>Works out the bill from what was ordered.</li>
+      </ul>
+      <div class="demo" aria-label="Small web demo of the restaurant order system">
+        <div>
+          <h3>1. Pick a table</h3>
+          <div class="tables" id="tables"></div>
+          <p class="msg" id="msg" role="status" aria-live="polite">Choose a table, then add dishes.</p>
+        </div>
+        <div>
+          <h3>2. Add dishes</h3>
+          <div id="menu"></div>
+          <div class="total"><span>Total</span><span id="total">Rs 0</span></div>
+          <button class="go" id="go" type="button">Place order</button>
+        </div>
+      </div>
+      <p class="note">This demo is a quick web version of the same idea. The original program runs in the console and is written in C++.</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu">
+      <h3>Bachelor of Information Technology, second semester</h3>
+      <p>Kathmandu Don Bosco College (KDBC), affiliated with Purbanchal University</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Say hello</h2>
+    <p class="lead">If you have an internship, a project or a question, I would like to hear from you.</p>
+    <p>Email: <a href="mailto:tamangyunima2020@gmail.com">tamangyunima2020@gmail.com</a></p>
+    <p>Phone: <a href="tel:+9779761061149">(+977) 9761061149</a></p>
+    <p>Kirtipur, Kathmandu, Nepal</p>
+  </section>
+</main>
+
+<footer>
+  <div>Made by Yunima Tamang</div>
+  <button id="theme" type="button">Switch day and night</button>
+</footer>
+
+<script>
+const dishes=[["Momo",180],["Thukpa",220],["Fried rice",200],["Chowmein",160],["Milk tea",40]];
+const booked=new Set();let table=null;const qty=dishes.map(()=>0);
+const $=id=>document.getElementById(id),msg=$("msg");
+function drawTables(){
+  $("tables").innerHTML="";
+  for(let n=1;n<=6;n++){
+    const b=document.createElement("button");b.type="button";b.textContent="Table "+n;
+    b.setAttribute("aria-pressed",table===n);
+    if(booked.has(n))b.classList.add("taken");
+    b.onclick=()=>{
+      if(booked.has(n)){msg.textContent="Table "+n+" is already booked. Please choose another table.";return}
+      table=n;msg.textContent="Table "+n+" selected.";drawTables()};
+    $("tables").appendChild(b);
+  }
+}
+function drawMenu(){
+  $("menu").innerHTML="";
+  dishes.forEach(([name,price],i)=>{
+    const row=document.createElement("div");row.className="item";
+    row.innerHTML=`<span>${name} <small>Rs ${price}</small></span><button type="button" aria-label="Remove one ${name}">-</button><output>${qty[i]}</output><button type="button" aria-label="Add one ${name}">+</button>`;
+    const [minus,,plus]=row.querySelectorAll("button, output");
+    row.children[1].onclick=()=>{if(qty[i]>0){qty[i]--;update()}};
+    row.children[3].onclick=()=>{qty[i]++;update()};
+    $("menu").appendChild(row);
+  });
+}
+function bill(){return dishes.reduce((s,d,i)=>s+d[1]*qty[i],0)}
+function update(){drawMenu();$("total").textContent="Rs "+bill()}
+$("go").onclick=()=>{
+  if(!table){msg.textContent="Pick a table first.";return}
+  if(!bill()){msg.textContent="Add at least one dish.";return}
+  const lines=dishes.map((d,i)=>qty[i]?`${qty[i]} x ${d[0]}`:"").filter(Boolean).join(", ");
+  msg.textContent=`Table ${table} is booked.\n${lines}\nBill: Rs ${bill()}`;
+  booked.add(table);table=null;qty.fill(0);drawTables();update();
+};
+$("theme").onclick=()=>{
+  const r=document.documentElement,dark=getComputedStyle(r).getPropertyValue("--paper").trim()==="#15211f";
+  r.setAttribute("data-theme",dark?"light":"dark");
+};
+drawTables();update();
+</script>
+</body>
+</html>
